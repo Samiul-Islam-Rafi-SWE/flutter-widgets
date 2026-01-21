@@ -1,4 +1,5 @@
-// Scaffold | colum | Row | Dialog | Bottom Sheet
+// Buttons(ElevatedButton , textButton, IconButton, GesturDetector , Inkwell) |
+//Text_input--> (TextField) | container | rechTest | padding
 
 import 'package:flutter/material.dart';
 
@@ -10,99 +11,153 @@ class myApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'widget',
+      title: 'Essential widgets',
       debugShowCheckedModeBanner: false,
       home: Home(),
     );
   }
 }
 
-// column => vartically
-// ROw = > Horizontally
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen.shade50,
       appBar: AppBar(
-        backgroundColor: Colors.cyanAccent,
-        title: Text('DIU-DAFFODIL', style: TextStyle(color: Colors.blueAccent)),
-        leading: Icon(Icons.home, color: Colors.indigo),
+        leading: Icon(Icons.home, color: Colors.black87),
+        title: Text('WIDGETS', style: TextStyle(color: Colors.black87)),
+        backgroundColor: Colors.teal,
         actions: [
           IconButton(
             onPressed: () {
-              // ScaffoldMessenger.of(context).showSnackBar(
-              //   // SnackBar(
-              //   //   content: Text('Money has been Transfer'),
-              //   //   backgroundColor: Colors.red,
-              //   //   duration: Duration(seconds: 1),
-              //   // ),
-              // );
-
-              //----------> alart dialoge
-              // showAboutDialog(context: context);
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: Text('send money'),
-                    content: Text('are you sure that you want to sand money'),
-                  );
-                },
-              );
+              showAboutDialog(context: context);
             },
             icon: Icon(Icons.add),
           ),
         ],
       ),
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Daffodil University'),
-            Text('Welocme Samiul'),
-            Text('From'),
-            Text('Samiul'),
+            // Buttons mainly work evenfire -=- ElevatedButton
+            // ElevatedButton(
+            //   style: ElevatedButton.styleFrom(
+            //     backgroundColor: Colors.red,
+            //     foregroundColor: Colors.white,
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(9),
+            //       side: BorderSide(width: 1, color: Colors.greenAccent),
+            //     ),
+            //     textStyle: TextStyle(fontSize: 23, fontWeight: FontWeight.w400),
+            //     // padding: EdgeInsets.all(12),
+            //     padding: EdgeInsets.symmetric(horizontal: 22, vertical: 16),
+            //   ),
+            //   onPressed: () {
+            //     print('Ok your press working');
+            //   },
+            //   child: Text('Press Here'),
+            // ),
+            // TextButton(
+            //   style: TextButton.styleFrom(
+            //     foregroundColor: const Color.fromARGB(255, 77, 255, 83),
+            //     textStyle: TextStyle(fontSize: 34),
+            //   ),
 
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Text('Gretting '),
-                Text('from '),
-                Text('samiul'),
-                Column(children: [Text('Date'), Text('24-23-2002')]),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text('This id is'), Text('241-35-430'), Text('name')],
-            ),
-            Column(
-              children: [
-                Text('your name is '),
-                Text('Samiul Islam Rafi  '),
-                Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(Icons.date_range),
-                        Text('date : '),
-                        Text('23/23/1025'),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Text('date name'),
+            //   onPressed: () {},
+            //   child: Text('Send money', style: TextStyle(fontSize: 12)),
+            // ),
+            // IconButton(
+            //   onPressed: () {
+            //     print('please add a picture');
+            //   },
+            //   icon: Icon(Icons.add_a_photo, color: Colors.deepOrange),
+            // ),
+            // //only output
+            // GestureDetector(
+            //   onTap: () {
+            //     print('on Tap detected');
+            //   },
+            //   onDoubleTap: () {
+            //     print('on Double tap detected');
+            //   },
+            //   onLongPress: () {
+            //     print('on LOng press detected');
+            //   },
+            //   child: Column(
+            //     children: [
+            //       Text('My Name :'),
+            //       Icon(Icons.add_alarm_sharp),
+            //       Row(children: [Text('This is a Row')]),
+            //     ],
+            //   ),
+            // ),
+            // //register fitback show
+            // InkWell(
+            //   splashColor: Colors.red,
+            //   radius: 16,
+            //   borderRadius: BorderRadius.circular(30),
+            //   onTap: () {
+            //     print('ok On tap detected');
+            //   },
+            //   onDoubleTap: () {
+            //     print('Ok on double tap');
+            //   },
+            //   onLongPress: () {
+            //     print('Ok long tap');
+            //   },
+            //   child: Column(
+            //     children: [
+            //       Text('Inkwel output run'),
+            //       Icon(Icons.access_alarms_outlined),
+            //       Row(children: [Text('this is a row')]),
+            //     ],
+            //   ),
+            // ),
+            // //Text_input--> (TextField) | container | rechTest
+            // Padding(
+            //   padding: const EdgeInsets.all(16),
+            //   child: TextFormField(
+            //     // controller: TextEditingController(),//text inptu , text clear
+            //     style: TextStyle(fontSize: 23, color: Colors.black),
+            //     maxLength: 23,
+            //     decoration: InputDecoration(
+            //       hintText: 'Enter Your email',
+            //       hintStyle: TextStyle(
+            //         fontSize: 20,
+            //         fontWeight: FontWeight.w400,
+            //       ),
+
+            //       // label: Text('Email'),
+            //       labelText: 'Email',
+            //       labelStyle: TextStyle(
+            //         fontSize: 20,
+            //         color: Colors.black,
+            //         backgroundColor: const Color.fromARGB(255, 63, 192, 21),
+            //       ),
+            //       border: OutlineInputBorder(
+            //         borderRadius: BorderRadius.circular(16),
+            //         // borderSide: BorderSide(width: 4),
+            //       ),
+            //       focusedBorder: OutlineInputBorder(
+            //         borderSide: BorderSide(width: 2, color: Colors.black),
+            //         borderRadius: BorderRadius.circular(23),
+            //       ),
+
+            //       enabledBorder: OutlineInputBorder(
+            //         borderRadius: BorderRadius.circular(16),
+            //         borderSide: BorderSide(width: 3, color: Colors.black26),
+            //       ),
+            //       fillColor: const Color.fromARGB(255, 18, 165, 163),
+            //       filled: true,
+            //       prefix: Icon(Icons.add),
+            //       suffixIcon: Icon(Icons.remove_red_eye),
+            //     ),
+            //   ),
+            // ),
+
+            //container
           ],
         ),
       ),
