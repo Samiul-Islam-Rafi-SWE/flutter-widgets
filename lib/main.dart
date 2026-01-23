@@ -1,6 +1,8 @@
 // Buttons(ElevatedButton , textButton, IconButton, GesturDetector , Inkwell) |
 //Text_input--> (TextField) | container | rechTest | padding
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,7 +41,6 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Buttons mainly work evenfire -=- ElevatedButton
             // ElevatedButton(
@@ -156,6 +157,57 @@ class Home extends StatelessWidget {
             //     ),
             //   ),
             // ),
+
+            //container
+            Wrap(
+              spacing: 8,
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: Colors.black, width: 3),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text('samiul'),
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    // border: Border(
+                    //   top: BorderSide(color: Colors.black, width: 3),
+                    //   bottom: BorderSide(color: Colors.red),
+                    // ),
+                    borderRadius: BorderRadius.circular(16),
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/samiul.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.amberAccent,
+                        spreadRadius: 5,
+                        blurRadius: 4,
+                        offset: Offset(0, 5),
+                      ),
+                    ],
+                  ),
+
+                  alignment: Alignment.center,
+                  child: Text(
+                    'samiul',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
