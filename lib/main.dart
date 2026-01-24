@@ -1,9 +1,9 @@
-// Buttons(ElevatedButton , textButton, IconButton, GesturDetector , Inkwell) |
-//Text_input--> (TextField) | container | rechTest | padding
+//listview |
 
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(myApp());
@@ -15,10 +15,19 @@ class myApp extends StatelessWidget {
     return MaterialApp(
       title: 'Essential widgets',
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: X(),
     );
   }
 }
+
+final List<String> studentList = [
+  'jahid',
+  'samiul',
+  'fahid',
+  'kamrul',
+  'Rofiq',
+  'kamal',
+];
 
 class Home extends StatelessWidget {
   @override
@@ -37,178 +46,219 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Buttons mainly work evenfire -=- ElevatedButton
-            // ElevatedButton(
-            //   style: ElevatedButton.styleFrom(
-            //     backgroundColor: Colors.red,
-            //     foregroundColor: Colors.white,
-            //     shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(9),
-            //       side: BorderSide(width: 1, color: Colors.greenAccent),
-            //     ),
-            //     textStyle: TextStyle(fontSize: 23, fontWeight: FontWeight.w400),
-            //     // padding: EdgeInsets.all(12),
-            //     padding: EdgeInsets.symmetric(horizontal: 22, vertical: 16),
-            //   ),
-            //   onPressed: () {
-            //     print('Ok your press working');
-            //   },
-            //   child: Text('Press Here'),
-            // ),
-            // TextButton(
-            //   style: TextButton.styleFrom(
-            //     foregroundColor: const Color.fromARGB(255, 77, 255, 83),
-            //     textStyle: TextStyle(fontSize: 34),
-            //   ),
 
-            //   onPressed: () {},
-            //   child: Text('Send money', style: TextStyle(fontSize: 12)),
-            // ),
-            // IconButton(
-            //   onPressed: () {
-            //     print('please add a picture');
-            //   },
-            //   icon: Icon(Icons.add_a_photo, color: Colors.deepOrange),
-            // ),
-            // //only output
-            // GestureDetector(
-            //   onTap: () {
-            //     print('on Tap detected');
-            //   },
-            //   onDoubleTap: () {
-            //     print('on Double tap detected');
-            //   },
-            //   onLongPress: () {
-            //     print('on LOng press detected');
-            //   },
-            //   child: Column(
-            //     children: [
-            //       Text('My Name :'),
-            //       Icon(Icons.add_alarm_sharp),
-            //       Row(children: [Text('This is a Row')]),
-            //     ],
-            //   ),
-            // ),
-            // //register fitback show
-            // InkWell(
-            //   splashColor: Colors.red,
-            //   radius: 16,
-            //   borderRadius: BorderRadius.circular(30),
-            //   onTap: () {
-            //     print('ok On tap detected');
-            //   },
-            //   onDoubleTap: () {
-            //     print('Ok on double tap');
-            //   },
-            //   onLongPress: () {
-            //     print('Ok long tap');
-            //   },
-            //   child: Column(
-            //     children: [
-            //       Text('Inkwel output run'),
-            //       Icon(Icons.access_alarms_outlined),
-            //       Row(children: [Text('this is a row')]),
-            //     ],
-            //   ),
-            // ),
-            // //Text_input--> (TextField) | container | rechTest
-            // Padding(
-            //   padding: const EdgeInsets.all(16),
-            //   child: TextFormField(
-            //     // controller: TextEditingController(),//text inptu , text clear
-            //     style: TextStyle(fontSize: 23, color: Colors.black),
-            //     maxLength: 23,
-            //     decoration: InputDecoration(
-            //       hintText: 'Enter Your email',
-            //       hintStyle: TextStyle(
-            //         fontSize: 20,
-            //         fontWeight: FontWeight.w400,
-            //       ),
+      //   body: SingleChildScrollView(
 
-            //       // label: Text('Email'),
-            //       labelText: 'Email',
-            //       labelStyle: TextStyle(
-            //         fontSize: 20,
-            //         color: Colors.black,
-            //         backgroundColor: const Color.fromARGB(255, 63, 192, 21),
-            //       ),
-            //       border: OutlineInputBorder(
-            //         borderRadius: BorderRadius.circular(16),
-            //         // borderSide: BorderSide(width: 4),
-            //       ),
-            //       focusedBorder: OutlineInputBorder(
-            //         borderSide: BorderSide(width: 2, color: Colors.black),
-            //         borderRadius: BorderRadius.circular(23),
-            //       ),
+      //     child: Column(
+      //       children: [
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //         Text('daffodil international university'),
+      //       ],
+      //     ),
+      //   ),
 
-            //       enabledBorder: OutlineInputBorder(
-            //         borderRadius: BorderRadius.circular(16),
-            //         borderSide: BorderSide(width: 3, color: Colors.black26),
-            //       ),
-            //       fillColor: const Color.fromARGB(255, 18, 165, 163),
-            //       filled: true,
-            //       prefix: Icon(Icons.add),
-            //       suffixIcon: Icon(Icons.remove_red_eye),
-            //     ),
-            //   ),
-            // ),
-
-            //container
-            Wrap(
-              spacing: 8,
+      //ListView
+      // body: ListView(
+      //   scrollDirection: Axis.horizontal,
+      //   children: [
+      //     Text('samiul'),
+      //     Text('samiul Islam rafi'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //     Text('Daffodil International University'),
+      //   ],
+      // ),
+      // body: ListView.builder(
+      //   itemCount: 100,
+      //   itemBuilder: (context, index) {
+      //     return Text('${index + 1}', style: TextStyle(fontSize: 36));
+      //   },
+      // ),
+      //
+      body: SingleChildScrollView(
+        child: ListView.builder(
+          // physics: NeverScrollableScrollPhysics(),
+          itemCount: studentList.length,
+          itemBuilder: (context, index) {
+            return Row(
               children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.teal,
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.black, width: 3),
+                Text("${index + 1}. ", style: TextStyle(color: Colors.black87)),
+                Text(studentList[index]),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class X extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        top: true,
+        bottom: true,
+        child: SingleChildScrollView(
+          child: Column(
+            // spacing: 10,
+            children: [
+              // appbar part
+              Container(
+                color: Colors.blueAccent,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 12,
+                    horizontal: 4,
                   ),
-                  alignment: Alignment.center,
-                  child: Text('samiul'),
+                  child: Center(child: Text("Home")),
                 ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.teal,
-                    // border: Border(
-                    //   top: BorderSide(color: Colors.black, width: 3),
-                    //   bottom: BorderSide(color: Colors.red),
-                    // ),
-                    borderRadius: BorderRadius.circular(16),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/samiul.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.amberAccent,
-                        spreadRadius: 5,
-                        blurRadius: 4,
-                        offset: Offset(0, 5),
+              ),
+
+              // body
+              Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.blueGrey,
+              ),
+              Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.brown,
+              ),
+
+              ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: studentList.length,
+                itemBuilder: (BuildContext studentContext, int index) {
+                  return Column(
+                    children: [
+                      SizedBox(height: 10),
+                      Container(
+                        color: Colors.lightBlueAccent,
+                        child: Row(
+                          children: [
+                            Text(
+                              "${index + 1}. ",
+                              style: TextStyle(color: Colors.black87),
+                            ),
+                            Text(studentList[index]),
+                          ],
+                        ),
                       ),
                     ],
-                  ),
+                  );
+                },
+              ),
 
-                  alignment: Alignment.center,
-                  child: Text(
-                    'samiul',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+              // ...List.generate(studentList.length, (index) {
+              //   return Row(
+              //     children: [
+              //       Text(
+              //         "${index + 1}. ",
+              //         style: TextStyle(color: Colors.black87),
+              //       ),
+              //       Text(studentList[index]),
+              //     ],
+              //   );
+              // }),
+              Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.brown,
+              ),
+              Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.blueGrey,
+              ),
+            ],
+          ),
         ),
       ),
     );
