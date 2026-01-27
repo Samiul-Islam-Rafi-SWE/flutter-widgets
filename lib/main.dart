@@ -340,17 +340,30 @@ class Home extends StatelessWidget {
       body: ListView.separated(
         itemCount: studentList.length,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-
-            child: Text(
-              studentList[index], // ✅ Correct usage
-              style: TextStyle(fontSize: 18),
-            ),
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                textAlign: TextAlign.center,
+                studentList[index], // ✅ Correct usage
+                style: TextStyle(fontSize: 18),
+              ),
+              Text(
+                textAlign: TextAlign.center,
+                studentList[index], // ✅ Correct usage
+                style: TextStyle(fontSize: 18),
+              ),
+            ],
           );
         },
         separatorBuilder: (context, index) {
-          return Divider(height: 0, thickness: 6, endIndent: 10, indent: 10);
+          return Divider(
+            height: 0,
+            thickness: 3,
+            endIndent: 10,
+            indent: 10,
+            color: Colors.blue,
+          );
         },
       ),
     );
