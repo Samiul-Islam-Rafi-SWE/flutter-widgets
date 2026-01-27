@@ -337,34 +337,54 @@ class Home extends StatelessWidget {
       //     );
       //   },
       // ),
-      body: ListView.separated(
-        itemCount: studentList.length,
-        itemBuilder: (context, index) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                textAlign: TextAlign.center,
-                studentList[index], // ✅ Correct usage
-                style: TextStyle(fontSize: 18),
-              ),
-              Text(
-                textAlign: TextAlign.center,
-                studentList[index], // ✅ Correct usage
-                style: TextStyle(fontSize: 18),
-              ),
-            ],
-          );
-        },
-        separatorBuilder: (context, index) {
-          return Divider(
-            height: 0,
-            thickness: 3,
-            endIndent: 10,
-            indent: 10,
-            color: Colors.blue,
-          );
-        },
+      // body: ListView.separated(
+      //   itemCount: studentList.length,
+      //   itemBuilder: (context, index) {
+      //     return Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       children: [
+      //         Text(
+      //           textAlign: TextAlign.center,
+      //           studentList[index], // ✅ Correct usage
+      //           style: TextStyle(fontSize: 18),
+      //         ),
+      //         Text(
+      //           textAlign: TextAlign.center,
+      //           studentList[index], // ✅ Correct usage
+      //           style: TextStyle(fontSize: 18),
+      //         ),
+      //       ],
+      //     );
+      //   },
+      //   separatorBuilder: (context, index) {
+      //     return Divider(
+      //       height: 0,
+      //       thickness: 3,
+      //       endIndent: 10,
+      //       indent: 10,
+      //       color: Colors.blue,
+      //     );
+      //   },
+      // ),
+
+      /** Grid Operation */
+      body: GridView(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 6,
+        ),
+        children: [
+          Text('1'),
+          Text('2'),
+          Text('3'),
+          Text('4'),
+          Text('5'),
+          Text('6'),
+          Text('1'),
+          Text('1'),
+          Text('1'),
+          Text('1'),
+          Text('1'),
+        ],
       ),
     );
   }
