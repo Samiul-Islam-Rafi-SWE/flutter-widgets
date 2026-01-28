@@ -366,26 +366,38 @@ class Home extends StatelessWidget {
       //     );
       //   },
       // ),
-
-      /** Grid Operation */
-      body: GridView(
+      body: GridView.builder(
+        itemCount: studentList.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 6,
+          crossAxisCount: 2,
+          childAspectRatio: 3,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
         ),
-        children: [
-          Text('1'),
-          Text('2'),
-          Text('3'),
-          Text('4'),
-          Text('5'),
-          Text('6'),
-          Text('1'),
-          Text('1'),
-          Text('1'),
-          Text('1'),
-          Text('1'),
-        ],
+        itemBuilder: (context, index) {
+          return Column(
+            children: [Text('Role - ${index + 1}'), Text(studentList[index])],
+          );
+        },
       ),
+
+      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //     crossAxisCount: 6,
+      //   ),
+      //   children: [
+      //     Text('1'),
+      //     Text('2'),
+      //     Text('3'),
+      //     Text('4'),
+      //     Text('5'),
+      //     Text('6'),
+      //     Text('1'),
+      //     Text('1'),
+      //     Text('1'),
+      //     Text('1'),
+      //     Text('1'),
+      //   ],
+      // ),
     );
   }
 }
