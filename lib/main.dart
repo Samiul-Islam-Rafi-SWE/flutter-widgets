@@ -22,9 +22,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.cyan,
       appBar: AppBar(
         leading: Icon(Icons.access_alarm_outlined),
-        title: Text('Navigation', style: TextStyle(color: Colors.black)),
+        title: Text('Home', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.amber,
         actions: [
           IconButton(
@@ -74,6 +75,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepOrange,
       appBar: AppBar(
         leading: Icon(Icons.access_alarm_outlined),
         title: Text('Profile', style: TextStyle(color: Colors.black)),
@@ -97,7 +99,15 @@ class Profile extends StatelessWidget {
               },
               child: Text('Back to home'),
             ),
-            ElevatedButton(onPressed: () {}, child: Text('Back to Setting')),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Settings()),
+                );
+              },
+              child: Text('Back to Setting'),
+            ),
           ],
         ),
       ),
@@ -111,6 +121,7 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
       appBar: AppBar(
         leading: Icon(Icons.access_alarm_outlined),
         title: Text('Settings', style: TextStyle(color: Colors.black)),
@@ -129,10 +140,21 @@ class Settings extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               child: Text('Back to previous page'),
             ),
-            ElevatedButton(onPressed: () {}, child: Text('Go to Home')),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                  (route) => false,
+                );
+              },
+              child: Text('Go to Home'),
+            ),
           ],
         ),
       ),
