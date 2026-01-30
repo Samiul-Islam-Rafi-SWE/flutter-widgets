@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_project/home.dart';
 
 void main() {
   runApp(myApp());
@@ -11,7 +10,7 @@ class myApp extends StatelessWidget {
     return MaterialApp(
       title: 'Navigation',
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Text("..."),
     );
   }
 }
